@@ -1,8 +1,11 @@
-// Import fs module from node
-const fs = require('fs');
+// Import utils.js file
+const add = require('./utils.js');
 
-// Write a test in notes.txt
-fs.writeFileSync('notes.txt', 'My name is Jorge.');
+const sum = add(4, -2);
 
-// Challenge: Append a message to notes.txt file using appendFileSync method
-fs.appendFileSync('notes.txt', ' And this is the appended message');
+console.log(sum);
+
+// Challenge: Define and use a function in a new file
+const getNotes = require('./notes.js');
+
+console.log(getNotes());
