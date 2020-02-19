@@ -1,10 +1,12 @@
+const chalk = require('chalk');
 const getNotes = require('./notes.js');
 
-console.log(getNotes());
+const command = process.argv[2];
 
-// Challenge: Use chalk library in the project
-// Bonus: Make text blue, bold and invert
-const chalk = require('chalk');
+if (command === 'add') {
+  console.log('Adding note!');
+} else if (command === 'remove') {
+  console.log('Removing note!');
+}
 
-console.log(chalk.green('Challenge Success!'));
-console.log(chalk.blue.bold.inverse('Bonus Success!'));
+console.log(process.argv);
