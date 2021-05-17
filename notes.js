@@ -33,8 +33,8 @@ const listNotes = () => {
 
   console.log(chalk.blue('Your notes'));
 
-  notes.forEach((note) => {
-    console.log(chalk.blue.inverse(`${note.title}`));
+  notes.forEach(({ title }) => {
+    console.log(chalk.blue.inverse(`${title}`));
   });
 };
 
@@ -44,7 +44,8 @@ const readNote = (title) => {
   const note = notes.find((note) => note.title === title);
 
   if (note) {
-    console.log(`${chalk.inverse(note.title)} - ${note.body}`);
+    const message = `${chalk.inverse(note.title)} - ${note.body}`;
+    console.log(message);
   } else {
     console.log(chalk.red.inverse('Unable to found note'));
   }
